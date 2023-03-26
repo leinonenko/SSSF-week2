@@ -1,4 +1,5 @@
 import express, {Request} from 'express';
+/*
 import {
   catDelete,
   catGet,
@@ -10,6 +11,8 @@ import {
   catPutAdmin,
   catDeleteAdmin,
 } from '../controllers/catController';
+*/
+
 import multer, {FileFilterCallback} from 'multer';
 import {body, param, query} from 'express-validator';
 import passport from '../../passport';
@@ -30,7 +33,7 @@ const upload = multer({dest: './uploads/', fileFilter});
 const router = express.Router();
 
 // TODO: add validation
-
+/*
 router
   .route('/')
   .get(catListGet)
@@ -62,5 +65,6 @@ router
     param('id'),
     catDelete
   );
+  */
 
 export default router;
