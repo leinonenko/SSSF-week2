@@ -35,7 +35,7 @@ const userGet = async (req: Request, res: Response, next: NextFunction) => {
 // - userListGet - get all users
 const userListGet = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const users = await userModel.find().select('-__v');
+    const users = await userModel.find().select('-__v -password -role');
     if (!users) {
       next(new CustomError('No users found', 404));
       return;

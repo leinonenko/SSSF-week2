@@ -1,17 +1,16 @@
 import express, {Request} from 'express';
-/*
+
 import {
   catDelete,
   catGet,
   catListGet,
   catPost,
   catPut,
-  catGetByUser,
-  catGetByBoundingBox,
-  catPutAdmin,
-  catDeleteAdmin,
+  //catGetByUser,
+  //catGetByBoundingBox,
+  //catPutAdmin,
+  //catDeleteAdmin,
 } from '../controllers/catController';
-*/
 
 import multer, {FileFilterCallback} from 'multer';
 import {body, param, query} from 'express-validator';
@@ -33,7 +32,7 @@ const upload = multer({dest: './uploads/', fileFilter});
 const router = express.Router();
 
 // TODO: add validation
-/*
+
 router
   .route('/')
   .get(catListGet)
@@ -44,8 +43,8 @@ router
     getCoordinates,
     catPost
   );
-
-router.route('/area').get(catGetByBoundingBox);
+console.log('YOU ARE STUPIDO TOO'),
+  /*router.route('/area').get(catGetByBoundingBox);
 
 router
   .route('/user')
@@ -55,16 +54,15 @@ router
   .route('/admin/:id')
   .put(passport.authenticate('jwt', {session: false}), catPutAdmin)
   .delete(passport.authenticate('jwt', {session: false}), catDeleteAdmin);
-
-router
-  .route('/:id')
-  .get(param('id'), catGet)
-  .put(passport.authenticate('jwt', {session: false}), param('id'), catPut)
-  .delete(
-    passport.authenticate('jwt', {session: false}),
-    param('id'),
-    catDelete
-  );
-  */
+*/
+  router
+    .route('/:id')
+    .get(param('id'), catGet)
+    .put(passport.authenticate('jwt', {session: false}), param('id'), catPut)
+    .delete(
+      passport.authenticate('jwt', {session: false}),
+      param('id'),
+      catDelete
+    );
 
 export default router;
