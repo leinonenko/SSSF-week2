@@ -156,7 +156,6 @@ const catPost = async (
   next: NextFunction
 ) => {
   try {
-    console.log('YOU ARE STUPIDO');
     const errors = validationResult(req);
     console.log(req.body);
 

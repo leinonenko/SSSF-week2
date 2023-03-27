@@ -152,7 +152,11 @@ const checkToken = (req: Request, res: Response, next: NextFunction) => {
   if (!req.user) {
     next(new CustomError('token not valid', 403));
   } else {
-    res.json(req.user);
+    res.json({
+      _id: (req.user as User)._id,
+      user_name: (req.user as User).user_name,
+      email: (req.user as User).email,
+    });
   }
 };
 export {
