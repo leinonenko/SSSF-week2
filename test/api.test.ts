@@ -25,7 +25,7 @@ import {
 } from './catFunctions';
 
 import randomstring from 'randomstring';
-import {catGetByUser} from '../src/api/controllers/catController';
+//import {catGetByUser} from '../src/api/controllers/catController';
 
 interface UserWithToken {
   user: User;

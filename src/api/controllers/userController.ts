@@ -20,7 +20,9 @@ const userGet = async (req: Request, res: Response, next: NextFunction) => {
         .join(', ');
       throw new CustomError(messages, 400);
     }
-    const user = await userModel.findById(req.params.id);
+    const user = await userModel
+      .findById(req.params.id)
+      .select('-role -password');
     if (!user) {
       next(new CustomError('No user found', 404));
       return;
